@@ -22,7 +22,6 @@ export default function App() {
     setTimer(30);
   };
 
-  // Define handleSubmit above its usage to avoid 'used before defined' warning
   const handleSubmit = useCallback(() => {
     let count = 0;
     quizData.forEach((q) => {
@@ -35,9 +34,9 @@ export default function App() {
   const handleNextQuestion = useCallback(() => {
     if (currentQuestionIndex < quizData.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
-      setTimer(30); // Reset timer for each new question
+      setTimer(30);
     } else {
-      handleSubmit(); // Submit the quiz if it's the last question
+      handleSubmit();
     }
   }, [currentQuestionIndex, quizData.length, handleSubmit]);
 
